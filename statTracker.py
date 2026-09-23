@@ -109,6 +109,10 @@ class Pitcher(RosterMember):
         print(f"K/9: {self.k_per_9():.1f}")
         print("W-L:", self.win, "-", self.lose)
 
+roster = {
+    
+}
+
 test_batter = Batter(1, "Elijah Batchelor", 4, "1B/LF", 100, 14, 12, 1, 5, 10, 21, 1, 3, 5, 2)
 test_batter.display_stats()
 
