@@ -7,7 +7,10 @@ class RosterMember:
         self.position = position
 
     def display_stats(self):
-        print(self.name, self.jersey_number, self.position)        
+        print("Player Name:", self.name)
+        print("Jersey Number:", self.jersey_number) 
+        print("Position:", self.position)  
+        print()    
 
 # Creating a Batter class to keep track of all batter stats
 class Batter(RosterMember):
@@ -45,10 +48,10 @@ class Batter(RosterMember):
     
     def display_stats(self):
         super().display_stats()
-        print("AVG:", self.batting_average())
-        print("WHIP:", self.on_base_percentage())
-        print("SB%:", self.stolen_base_percentage())
-        print("Strikeouts:", self.strikeouts())
+        print(f"AVG: {self.batting_average():.3f}")
+        print(f"OBP: {self.on_base_percentage():.3f}")
+        print(f"SB%: {self.stolen_base_percentage():.1%}")
+        print("Strikeouts:", self.strikeouts)
 
 
 # Creating a Pitcher class to keep track of all pitcher stats
@@ -101,7 +104,15 @@ class Pitcher(RosterMember):
     
     def display_stats(self):
         super().display_stats()
-        print("ERA:", self.era())
-        print("WHIP:", self.whip())
-        print("K/9:", self.k_per_9())
+        print(f"ERA: {self.era():.2f}")
+        print(f"WHIP: {self.whip():.2f}")
+        print(f"K/9: {self.k_per_9():.1f}")
         print("W-L:", self.win, "-", self.lose)
+
+test_batter = Batter(1, "Elijah Batchelor", 4, "1B/LF", 100, 14, 12, 1, 5, 10, 21, 1, 3, 5, 2)
+test_batter.display_stats()
+
+print()
+
+test_pitcher = Pitcher(2, "Elijah Batchelor", 3, "SP", 91, 59, 7, 164, 60, 31, 140, 2, 183.2, 4, 2)
+test_pitcher.display_stats()
